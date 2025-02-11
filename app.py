@@ -84,7 +84,8 @@ def new_meme():
     global current_meme
     files = [f for f in os.listdir(MEMES_FOLDER) if f.endswith(('png', 'jpg', 'jpeg', 'gif', 'mp4'))]
     if not files:
-        return jsonify({'message': 'No media files found'})
+        # return jsonify({'message': 'No media files found'})
+        return jsonify({'meme': ''})
     current_meme = random.choice(files)
     return jsonify({'meme': current_meme})
 
