@@ -33,10 +33,12 @@ TEMPLATE = '''
     {% else %}
         <img id="meme" src="/{{ current_meme }}" style="max-width: 500px; max-height: 550px;" alt="No images found"><br>
     {% endif %}
+        <a href="/{{ current_meme }}">Link</a>
     </div>
-    <button onclick="acceptMeme()">Accept</button>
-    <button onclick="newMeme()">New Meme</button>
-
+    <div>
+        <button onclick="acceptMeme()">Accept</button>
+        <button onclick="newMeme()">New Meme</button>
+    </div>
     <!-- Upload form -->
     <h2>Upload a new meme</h2>
     <form action="/upload" method="POST" enctype="multipart/form-data">
