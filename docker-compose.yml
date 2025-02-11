@@ -6,3 +6,4 @@ services:
     volumes:
       - ./memes:/app/memes
       - ./used_memes:/app/used_memes
+    restart: always
