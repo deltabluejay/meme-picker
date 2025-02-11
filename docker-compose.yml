@@ -1,0 +1,8 @@
+services:
+  memes_app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./memes:/app/memes
+      - ./used_memes:/app/used_memes
