@@ -79,16 +79,6 @@ def accept_meme():
         return jsonify({'message': f'Meme {current_meme} moved to used_memes'})
     return jsonify({'message': 'No meme to accept'})
 
-@app.route('/new', methods=['POST'])
-def new_meme():
-    global current_meme
-    files = [f for f in os.listdir(MEMES_FOLDER) if f.endswith(('png', 'jpg', 'jpeg', 'gif', 'mp4'))]
-    if not files:
-        # return jsonify({'message': 'No media files found'})
-        return jsonify({'meme': ''})
-    current_meme = random.choice(files)
-    return jsonify({'meme': current_meme})
-
 # Route to handle file upload
 @app.route('/upload', methods=['POST'])
 def upload_file():
